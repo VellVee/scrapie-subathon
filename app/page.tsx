@@ -107,8 +107,11 @@ export default function SubathonPage() {
                         if (text.includes('SOULSLIKE') || text.includes('HORROR')) return '💀';
                         if (text.includes('VIEWER CHALLENGES')) return '⚔️';
                         if (text.includes('GREENSCREEN')) return '📹';
-                        if (text.includes('VTUBER')) return '🎭';
+                        if (text.includes('VTUBER')) return '😈';
                         if (text.includes('INFINITE')) return '♾️';
+                        if (text.includes('MAX TIMER FOR 7 DAYS')) return '🕐';
+                        if (text.includes('WIN CHALLENGE IN VARIOUS GAMES')) return '🎮';
+                        if (text.includes('RATING VIEWER SETUPS')) return '🖥️';
                         return '🎯';
                       };
                       
@@ -182,15 +185,26 @@ export default function SubathonPage() {
                       </div>
                     </div>
                     <ul className="space-y-2 sm:space-y-3 text-white">
-                      {events.map((e, idx) => (
-                        <li
-                          key={idx}
-                          className="grid grid-cols-[auto_1fr] items-center gap-3 sm:gap-4 text-xs sm:text-sm lg:text-base bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200"
-                        >
-                          <span className="font-semibold whitespace-nowrap">📆 {e.date}</span>
-                          <span className="font-trueno text-right">🏆 {e.text}</span>
-                        </li>
-                      ))}
+                      {events.map((e, idx) => {
+                        const getEventUrl = (date: string) => {
+                          if (date.includes('27.09')) return 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-eu-qualifier-on-twitch-rivals-lk2EK';
+                          if (date.includes('03.10')) return 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP';
+                          return null;
+                        };
+                        
+                        const eventUrl = getEventUrl(e.date);
+                        
+                        return (
+                          <li
+                            key={idx}
+                            className={`grid grid-cols-[auto_1fr] items-center gap-3 sm:gap-4 text-xs sm:text-sm lg:text-base bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 ${eventUrl ? 'cursor-pointer' : ''}`}
+                            onClick={() => eventUrl && window.open(eventUrl, '_blank')}
+                          >
+                            <span className="font-semibold whitespace-nowrap">📆 {e.date}</span>
+                            <span className="font-trueno text-right">🏆 {e.text}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </CardContent>
                 </Card>
