@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -226,7 +226,7 @@ export default function SubathonPage() {
                     </h2>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
-                        ⏰ Time for following is only added if you haven't unfollowed in last 2 months.
+                        ⏰ Time for following is only added if you haven&apos;t unfollowed in last 2 months.
                       </li>
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
                         🔄 Every 1000 Subs repeats the 1000 Subs goal
@@ -242,10 +242,11 @@ export default function SubathonPage() {
                 <Card className="bg-gray-900 backdrop-blur-lg shadow-2xl hover:shadow-3xl transition-all duration-300 border-0">
                   <CardContent className="p-1 bg-gray-900 rounded-lg">
                     <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-800">
-                      <img
+                      <Image
                         src="/images/image.webp"
                         alt="TrackmaniaImage"
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                   </CardContent>
