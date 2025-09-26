@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scrapie's Subtember Subathon Website
+
+A responsive Next.js website for displaying subathon goals, events, and stream information for Scrapie's Twitch channel.
+
+## Features
+
+- ⏰ **Timer Rules** - Clear display of subscription/donation time additions
+- 📅 **Event Schedule** - Upcoming stream events
+- ✅ **Goal Tracking** - Mark completed goals with visual feedback
+
+## Tech Stack
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Goal Management
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To mark goals as completed, edit the `subgoals` array in `app/page.tsx`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```tsx
+{ goal: 500, text: "RMT W/ GIFTSUBS", met: true }, // Completed goal
+```
 
-## Learn More
+Then commit and deploy the changes. Scuffed but works.
 
-To learn more about Next.js, take a look at the following resources:
+## Live Site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit the live subathon page at: [[Your deployed URL here](https://scrapie-subathon.vercel.app/)]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built for Scrapie's Subtember 2025 Subathon
