@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function SubathonPage() {
@@ -14,31 +13,29 @@ export default function SubathonPage() {
     setTimeout(() => setIsSpinning(false), 800) // Reset after animation duration
   }
 
-
-
   const subgoals = [
-    { goal: 500, text: "RMT W/ GIFTSUBS" },
-    { goal: 1000, text: "RMC /W GIFTSUBS" },
-    { goal: 1500, text: "RATING VIEWER SETUPS" },
-    { goal: 2000, text: "SPEEDMAPPING EVENT" },
-    { goal: 2500, text: "AMQ W/ GIFTSUBS" },
-    { goal: 3000, text: "CHAT PICKS A RANDOM STEAM GAME" },
-    { goal: 3500, text: "GEOGUESSR VS CHAT" },
-    { goal: 4000, text: "KO TOURNAMENT" },
-    { goal: 4500, text: "YLYL CHALLENGE" },
-    { goal: 5000, text: "50 WRs CHALLENGE" },
-    { goal: 5500, text: "SONG REQUESTS" },
-    { goal: 6000, text: "PLAYING RANDOM ALT CAMPAIGN" },
-    { goal: 6500, text: "WIN CHALLENGE IN VARIOUS GAMES" },
-    { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE" },
-    { goal: 7500, text: "PLAYING SOULSLIKE GAME" },
-    { goal: 8000, text: "VIEWER CHALLENGES" },
-    { goal: 8500, text: "BUYING A GREENSCREEN" },
-    { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN" },
-    { goal: 9500, text: "PLAYING A HORROR GAME" },
-    { goal: 10000, text: "MAX TIMER FOR 7 DAYS" },
-    { goal: 15000, text: "COMMISSIONING A VTUBER MODEL" },
-    { goal: 20000, text: "INFINITE SUBATHON" },
+    { goal: 500, text: "RMT W/ GIFTSUBS", met: true },
+    { goal: 1000, text: "RMC /W GIFTSUBS", met: true },
+    { goal: 1500, text: "RATING VIEWER SETUPS", met: true },
+    { goal: 2000, text: "SPEEDMAPPING EVENT", met: false },
+    { goal: 2500, text: "AMQ W/ GIFTSUBS", met: false },
+    { goal: 3000, text: "CHAT PICKS A RANDOM STEAM GAME", met: false },
+    { goal: 3500, text: "GEOGUESSR VS CHAT", met: false },
+    { goal: 4000, text: "KO TOURNAMENT", met: false },
+    { goal: 4500, text: "YLYL CHALLENGE", met: false },
+    { goal: 5000, text: "50 WRs CHALLENGE", met: false },
+    { goal: 5500, text: "SONG REQUESTS", met: false },
+    { goal: 6000, text: "PLAYING RANDOM ALT CAMPAIGN", met: false },
+    { goal: 6500, text: "WIN CHALLENGE IN VARIOUS GAMES", met: false },
+    { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE", met: false },
+    { goal: 7500, text: "PLAYING SOULSLIKE GAME", met: false },
+    { goal: 8000, text: "VIEWER CHALLENGES", met: false },
+    { goal: 8500, text: "BUYING A GREENSCREEN", met: false },
+    { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN", met: false },
+    { goal: 9500, text: "PLAYING A HORROR GAME", met: false },
+    { goal: 10000, text: "MAX TIMER FOR 7 DAYS", met: false },
+    { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
+    { goal: 20000, text: "INFINITE SUBATHON", met: false },
   ]
 
   const events = [
@@ -52,7 +49,7 @@ export default function SubathonPage() {
     { label: "Tier 3", value: "5 min" },
     { label: "$5 dono", value: "1 min" },
     { label: "500 Bits", value: "1 min" },
-    { label: "Follow", value: "1 sec" },
+    { label: "Follow (look below)", value: "1 sec" },
   ]
 
   return (
@@ -118,13 +115,21 @@ export default function SubathonPage() {
                       return (
                         <li
                           key={idx}
-                          className="grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr] items-center gap-2 sm:gap-3 bg-gradient-to-r from-gray-800 to-gray-700 p-2 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 group"
+                          className={`grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr] items-center gap-2 sm:gap-3 p-2 rounded-lg transition-all duration-200 group ${
+                            s.met 
+                              ? 'bg-gradient-to-r from-green-800 to-green-700 hover:from-green-700 hover:to-green-600' 
+                              : 'bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600'
+                          }`}
                         >
-                          <span className="font-black text-right text-blue-400 animate-number-glow group-hover:scale-110 transition-transform duration-200 text-sm sm:text-base">
+                          <span className={`font-black text-right animate-number-glow group-hover:scale-110 transition-transform duration-200 text-sm sm:text-base ${
+                            s.met ? 'text-green-400' : 'text-blue-400'
+                          }`}>
                             {s.goal}
                           </span>
-                          <span className="font-trueno text-left text-white group-hover:translate-x-1 transition-transform duration-200 text-xs sm:text-sm lg:text-base">
-                            {getEmoji(s.goal, s.text)} {s.text}
+                          <span className={`font-trueno text-left group-hover:translate-x-1 transition-transform duration-200 text-xs sm:text-sm lg:text-base ${
+                            s.met ? 'text-green-100 line-through' : 'text-white'
+                          }`}>
+                            {getEmoji(s.goal, s.text)} {s.text} {s.met ? '✅' : ''}
                           </span>
                         </li>
                       );
@@ -221,6 +226,9 @@ export default function SubathonPage() {
                     </h2>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
+                        ⏰ Time for following is only added if you haven't unfollowed in last 2 months.
+                      </li>
+                      <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
                         🔄 Every 1000 Subs repeats the 1000 Subs goal
                       </li>
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
@@ -235,8 +243,8 @@ export default function SubathonPage() {
                   <CardContent className="p-1 bg-gray-900 rounded-lg">
                     <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-800">
                       <img
-                                  src="/images/image.webp"
-                        alt="Subathon Image"
+                        src="/images/image.webp"
+                        alt="TrackmaniaImage"
                         className="w-full h-full object-cover"
                       />
                     </div>
