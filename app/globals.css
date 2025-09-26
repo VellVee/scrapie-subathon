@@ -1,48 +1,12 @@
 @import "tailwindcss";
 
 html {
-  font-size: 16px !important;
-  -webkit-text-size-adjust: none !important;
-  -moz-text-size-adjust: none !important;
-  -ms-text-size-adjust: none !important;
-  text-size-adjust: none !important;
+  font-size: 16px;
 }
 
 body {
-  font-size: 16px !important;
-  line-height: 1.5 !important;
-}
-
-/* Fixed size containers that won't scale with zoom */
-.fixed-layout {
-  width: 1400px !important;
-  max-width: none !important;
-  min-width: 1400px !important;
-  margin: 0 auto !important;
-  transform: scale(1) !important;
-  transform-origin: center top !important;
-}
-
-.fixed-layout * {
-  font-size: inherit !important;
-  line-height: inherit !important;
-}
-
-/* Override responsive classes to use fixed values */
-.fixed-layout .text-5xl {
-  font-size: 48px !important;
-}
-
-.fixed-layout .text-3xl {
-  font-size: 30px !important;
-}
-
-.fixed-layout .text-2xl {
-  font-size: 24px !important;
-}
-
-.fixed-layout .text-xl {
-  font-size: 20px !important;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 :root {
