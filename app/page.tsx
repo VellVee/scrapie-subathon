@@ -16,7 +16,7 @@ export default function SubathonPage() {
   const subgoals = [
     { goal: 500, text: "RMT W/ GIFTSUBS", met: true },
     { goal: 1000, text: "RMC /W GIFTSUBS", met: true },
-    { goal: 1500, text: "RATING VIEWER SETUPS", met: false },
+    { goal: 1500, text: "RATING VIEWER SETUPS", met: true },
     { goal: 2000, text: "SPEEDMAPPING EVENT", met: false },
     { goal: 2500, text: "AMQ W/ GIFTSUBS", met: false },
     { goal: 3000, text: "CHAT PICKS A RANDOM STEAM GAME", met: false },
