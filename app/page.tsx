@@ -229,10 +229,10 @@ export default function SubathonPage() {
                         ⏰ Time for following is only added if you haven&apos;t unfollowed in last 2 months.
                       </li>
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
-                        🔄 Every 1000 Subs repeats the 1000 Subs goal
+                        🔄 Every 1000 Subs repeats the 1000 Subs goal.
                       </li>
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
-                        🗺️ 20 Subs = You can request a map to play during daily session
+                        🗺️ Gifting 20 Subs means you can request a map to play during daily session.
                       </li>
                     </ul>
                   </CardContent>
