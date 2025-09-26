@@ -235,7 +235,7 @@ export default function SubathonPage() {
                   <CardContent className="p-1 bg-gray-900 rounded-lg">
                     <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-800">
                       <img
-                                  src="/images/image.png"
+                                  src="/images/image.webp"
                         alt="Subathon Image"
                         className="w-full h-full object-cover"
                       />
