@@ -37,7 +37,7 @@ Then commit and deploy the changes. Scuffed but works.
 
 ## Live Site
 
-Visit the live subathon page at: [[Your deployed URL here](https://scrapie-subathon.vercel.app/)]
+Visit the live subathon page at: https://scrapie-subathon.vercel.app/
 
 ---
 
