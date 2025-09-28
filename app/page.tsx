@@ -21,7 +21,7 @@ export default function SubathonPage() {
     { goal: 2500, text: "AMQ W/ GIFTSUBS", met: true },
     { goal: 3000, text: "CHAT PICKS A RANDOM STEAM GAME", met: true },
     { goal: 3500, text: "GEOGUESSR VS CHAT", met: true },
-    { goal: 4000, text: "KO TOURNAMENT", met: false },
+    { goal: 4000, text: "KO TOURNAMENT", met: true },
     { goal: 4500, text: "YLYL CHALLENGE", met: false },
     { goal: 5000, text: "50 WRs CHALLENGE", met: false },
     { goal: 5500, text: "SONG REQUESTS", met: false },
