@@ -24,7 +24,7 @@ export default function SubathonPage() {
     { goal: 4000, text: "KO TOURNAMENT", met: true },
     { goal: 4500, text: "YLYL CHALLENGE", met: true },
     { goal: 5000, text: "50 WRs CHALLENGE", met: true },
-    { goal: 5500, text: "SONG REQUESTS", met: false },
+    { goal: 5500, text: "SONG REQUESTS", met: true },
     { goal: 6000, text: "PLAYING RANDOM ALT CAMPAIGN", met: false },
     { goal: 6500, text: "WIN CHALLENGE IN VARIOUS GAMES", met: false },
     { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE", met: false },
