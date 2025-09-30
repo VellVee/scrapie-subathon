@@ -4,13 +4,11 @@ import { useState, useMemo } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 
-// Event URL mapping for performance
 const EVENT_URL_MAP: Record<string, string | undefined> = {
   '27.09': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-eu-qualifier-on-twitch-rivals-lk2EK',
   '03.10': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP'
 };
 
-// Emoji mapping for better performance
 const EMOJI_MAP = {
   RMT: '🎲',
   RMC: '🎲',
@@ -45,7 +43,6 @@ export default function SubathonPage() {
     setTimeout(() => setIsSpinning(false), 800) // Reset after animation duration
   }
 
-  // Memoized data arrays to prevent unnecessary re-renders
   const subgoals = useMemo(() => [
     { goal: 500, text: "RMT W/ GIFTSUBS", met: true },
     { goal: 1000, text: "RMC W/ GIFTSUBS", met: true },
@@ -94,7 +91,6 @@ export default function SubathonPage() {
       <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 shadow-2xl backdrop-blur-lg border-2 sm:border-4 border-black">
           <div className="relative p-4 sm:p-6">
-            {/* Animated gradient background */}
             <div className="absolute -inset-6 bg-gradient-to-br from-blue-400 via-cyan-400 to-emerald-400 rounded-3xl animate-gradient opacity-90" />
             <div className="absolute -inset-6 bg-gradient-to-tl from-purple-400 via-pink-400 via-rose-400 to-orange-400 rounded-3xl animate-gradient opacity-80" style={{animationDelay: '3s'}} />
             <div className="absolute -inset-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-3xl animate-gradient opacity-70" style={{animationDelay: '6s'}} />
@@ -125,13 +121,11 @@ export default function SubathonPage() {
                   </h2>
                   <ul className="space-y-1 flex-1 flex flex-col justify-between">
                     {subgoals.map((s, idx) => {
-                      // Get emoji from map or use default
                       const getEmoji = (text: string) => {
-                        // Check each key in EMOJI_MAP
                         for (const [key, emoji] of Object.entries(EMOJI_MAP)) {
                           if (text.includes(key)) return emoji;
                         }
-                        return '�'; // Default
+                        return '�';
                       };
                       
                       return (
@@ -161,7 +155,6 @@ export default function SubathonPage() {
               </Card>
 
               <div className="space-y-4 sm:space-y-6 flex flex-col">
-                {/* Twitch Stream Embed with Watch Live Button */}
                 <Card className="bg-gray-900 backdrop-blur-lg shadow-2xl hover:shadow-3xl transition-all duration-300 border-0">
                   <CardContent className="p-1 bg-gray-900 rounded-lg">
                     <div className="flex flex-col gap-2">
@@ -220,7 +213,6 @@ export default function SubathonPage() {
                     </div>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       {events.map((e, idx) => {
-                        // Get event URL from the map by extracting the date
                         const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : '';
                         const eventUrl = EVENT_URL_MAP[dateKey];
                         
