@@ -39,8 +39,8 @@ export default function SubathonPage() {
   ]
 
   const events = [
-    { date: "Saturday, 27.09", text: "Twitch Rivals" },
-    { date: "Friday, 03.10", text: "Twitch Rivals Finals" },
+    { date: "Saturday, 27.09", text: "Twitch Rivals", completed: true },
+    { date: "Friday, 03.10", text: "Twitch Rivals Finals", completed: false },
   ]
 
   const timerRules = [
@@ -142,25 +142,37 @@ export default function SubathonPage() {
               </Card>
 
               <div className="space-y-4 sm:space-y-6 flex flex-col">
-                {/* Watch Live */}
-                <Card className="bg-gray-900 backdrop-blur-lg shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02] border-0 cursor-pointer animate-shimmer">
-                  <CardContent 
-                    className="p-1 bg-gray-900 rounded-lg"
-                    onClick={() => window.open('https://twitch.tv/Scrapie', '_blank')}
-                  >
-                    <div className="bg-purple-600 hover:bg-purple-500 rounded-md p-3 sm:p-4 transition-colors duration-300">
-                      <div className="flex items-center justify-center gap-2 sm:gap-3">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                          <span className="text-white font-bold text-lg sm:text-xl">WATCH LIVE</span>
+                {/* Twitch Stream Embed with Watch Live Button */}
+                <Card className="bg-gray-900 backdrop-blur-lg shadow-2xl hover:shadow-3xl transition-all duration-300 border-0">
+                  <CardContent className="p-1 bg-gray-900 rounded-lg">
+                    <div className="flex flex-col gap-2">
+                      <div className="relative aspect-video w-full rounded-md overflow-hidden">
+                        <iframe
+                          src="https://player.twitch.tv/?channel=scrapie&parent=localhost&parent=scrapie-subathon.vercel.app&muted=true"
+                          height="100%"
+                          width="100%"
+                          allowFullScreen={true}
+                          className="absolute inset-0"
+                          title="Scrapie's Twitch Stream"
+                        ></iframe>
+                      </div>
+                      <div 
+                        className="bg-purple-600 hover:bg-purple-500 rounded-md p-2 sm:p-3 transition-colors duration-300 cursor-pointer animate-shimmer"
+                        onClick={() => window.open('https://twitch.tv/Scrapie', '_blank')}
+                      >
+                        <div className="flex items-center justify-center gap-2 sm:gap-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                            <span className="text-white font-bold text-lg sm:text-xl">WATCH LIVE</span>
+                          </div>
+                          <Image
+                            src="https://pngimg.com/uploads/twitch/twitch_PNG23.png"
+                            alt="Twitch logo"
+                            width={32}
+                            height={32}
+                            className="h-6 w-6 sm:h-8 sm:w-8"
+                          />
                         </div>
-                        <Image
-                          src="https://pngimg.com/uploads/twitch/twitch_PNG23.png"
-                          alt="Twitch logo"
-                          width={32}
-                          height={32}
-                          className="h-6 w-6 sm:h-8 sm:w-8"
-                        />
                       </div>
                     </div>
                   </CardContent>
@@ -197,11 +209,17 @@ export default function SubathonPage() {
                         return (
                           <li
                             key={idx}
-                            className={`grid grid-cols-[auto_1fr] items-center gap-3 sm:gap-4 text-xs sm:text-sm lg:text-base bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 ${eventUrl ? 'cursor-pointer' : ''}`}
+                            className={`grid grid-cols-[auto_1fr] items-center gap-3 sm:gap-4 text-xs sm:text-sm lg:text-base 
+                              ${e.completed 
+                                ? 'bg-gradient-to-r from-green-800 to-green-700 hover:from-green-700 hover:to-green-600' 
+                                : 'bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600'} 
+                              p-2 sm:p-3 rounded-lg transition-all duration-200 ${eventUrl ? 'cursor-pointer' : ''}`}
                             onClick={() => eventUrl && window.open(eventUrl, '_blank')}
                           >
-                            <span className="font-semibold whitespace-nowrap">📆 {e.date}</span>
-                            <span className="font-trueno text-right">🏆 {e.text}</span>
+                            <span className={`font-semibold whitespace-nowrap ${e.completed ? 'text-green-300' : ''}`}>📆 {e.date}</span>
+                            <span className={`font-trueno text-right ${e.completed ? 'text-green-100 line-through' : ''}`}>
+                              🏆 {e.text} {e.completed ? '✅' : ''}
+                            </span>
                           </li>
                         );
                       })}
@@ -252,19 +270,7 @@ export default function SubathonPage() {
                   </CardContent>
                 </Card>
 
-                {/* 16:9 Image */}
-                <Card className="bg-gray-900 backdrop-blur-lg shadow-2xl hover:shadow-3xl transition-all duration-300 border-0">
-                  <CardContent className="p-1 bg-gray-900 rounded-lg">
-                    <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-800">
-                      <Image
-                        src="/images/image.webp"
-                        alt="TrackmaniaImage"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
+                {/* Removing the image card as it's been replaced with the Twitch embed at the top */}
               </div>
             </div>
           </div>
