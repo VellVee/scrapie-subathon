@@ -1,8 +1,40 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+
+// Event URL mapping for performance
+const EVENT_URL_MAP: Record<string, string | undefined> = {
+  '27.09': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-eu-qualifier-on-twitch-rivals-lk2EK',
+  '03.10': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP'
+};
+
+// Emoji mapping for better performance
+const EMOJI_MAP = {
+  RMT: '🎲',
+  RMC: '🎲',
+  'SPEEDMAPPING EVENT': '🔧',
+  'SPEEDMAPPING A MINICAMPAIGN': '🗺️',
+  AMQ: '🎵',
+  'CHAT PICKS': '🎮',
+  GEOGUESSR: '🌍',
+  TOURNAMENT: '🏆',
+  YLYL: '😂',
+  '50 WRs': '🥇',
+  'SONG REQUESTS': '🎶',
+  'PLAYING RANDOM ALT CAMPAIGN': '🎮',
+  COSPLAY: '👗',
+  SOULSLIKE: '💀',
+  HORROR: '💀',
+  'VIEWER CHALLENGES': '⚔️',
+  GREENSCREEN: '📹',
+  VTUBER: '😈',
+  INFINITE: '♾️',
+  'MAX TIMER FOR 7 DAYS': '🕐',
+  'WIN CHALLENGE IN VARIOUS GAMES': '🎮',
+  'RATING VIEWER SETUPS': '🖥️'
+};
 
 export default function SubathonPage() {
   const [isSpinning, setIsSpinning] = useState(false)
@@ -13,7 +45,8 @@ export default function SubathonPage() {
     setTimeout(() => setIsSpinning(false), 800) // Reset after animation duration
   }
 
-  const subgoals = [
+  // Memoized data arrays to prevent unnecessary re-renders
+  const subgoals = useMemo(() => [
     { goal: 500, text: "RMT W/ GIFTSUBS", met: true },
     { goal: 1000, text: "RMC W/ GIFTSUBS", met: true },
     { goal: 1500, text: "RATING VIEWER SETUPS", met: true },
@@ -36,21 +69,21 @@ export default function SubathonPage() {
     { goal: 10000, text: "MAX TIMER FOR 7 DAYS", met: false },
     { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
     { goal: 20000, text: "INFINITE SUBATHON", met: false },
-  ]
+  ], []);
 
-  const events = [
+  const events = useMemo(() => [
     { date: "Saturday, 27.09", text: "Twitch Rivals", completed: true },
     { date: "Friday, 03.10", text: "Twitch Rivals Finals", completed: false },
-  ]
+  ], []);
 
-  const timerRules = [
+  const timerRules = useMemo(() => [
     { label: "Tier 1/Prime", value: "1 min" },
     { label: "Tier 2", value: "2 min" },
     { label: "Tier 3", value: "5 min" },
     { label: "$5 dono", value: "1 min" },
     { label: "500 Bits", value: "1 min" },
     { label: "Follow (look below)", value: "1 sec" },
-  ]
+  ], []);
 
   return (
     <main className="relative min-h-screen overflow-hidden">
@@ -92,27 +125,13 @@ export default function SubathonPage() {
                   </h2>
                   <ul className="space-y-1 flex-1 flex flex-col justify-between">
                     {subgoals.map((s, idx) => {
-                      const getEmoji = (goal: number, text: string) => {
-                        if (text.includes('RMT') || text.includes('RMC')) return '🎲';
-                        if (text.includes('SPEEDMAPPING') && text.includes('EVENT')) return '🔧';
-                        if (text.includes('SPEEDMAPPING') && text.includes('MINICAMPAIGN')) return '🗺️';
-                        if (text.includes('AMQ')) return '🎵';
-                        if (text.includes('CHAT PICKS')) return '🎮';
-                        if (text.includes('GEOGUESSR')) return '🌍';
-                        if (text.includes('TOURNAMENT')) return '🏆';
-                        if (text.includes('YLYL')) return '😂';
-                        if (text.includes('50WRs')) return '🥇';
-                        if (text.includes('SONG REQUESTS')) return '🎶';
-                        if (text.includes('COSPLAY')) return '👗';
-                        if (text.includes('SOULSLIKE') || text.includes('HORROR')) return '💀';
-                        if (text.includes('VIEWER CHALLENGES')) return '⚔️';
-                        if (text.includes('GREENSCREEN')) return '📹';
-                        if (text.includes('VTUBER')) return '😈';
-                        if (text.includes('INFINITE')) return '♾️';
-                        if (text.includes('MAX TIMER FOR 7 DAYS')) return '🕐';
-                        if (text.includes('WIN CHALLENGE IN VARIOUS GAMES')) return '🎮';
-                        if (text.includes('RATING VIEWER SETUPS')) return '🖥️';
-                        return '🎯';
+                      // Get emoji from map or use default
+                      const getEmoji = (text: string) => {
+                        // Check each key in EMOJI_MAP
+                        for (const [key, emoji] of Object.entries(EMOJI_MAP)) {
+                          if (text.includes(key)) return emoji;
+                        }
+                        return '�'; // Default
                       };
                       
                       return (
@@ -132,7 +151,7 @@ export default function SubathonPage() {
                           <span className={`font-trueno text-left group-hover:translate-x-1 transition-transform duration-200 text-xs sm:text-sm lg:text-base ${
                             s.met ? 'text-green-100 line-through' : 'text-white'
                           }`}>
-                            {getEmoji(s.goal, s.text)} {s.text} {s.met ? '✅' : ''}
+                            {getEmoji(s.text)} {s.text} {s.met ? '✅' : ''}
                           </span>
                         </li>
                       );
@@ -154,11 +173,13 @@ export default function SubathonPage() {
                           allowFullScreen={true}
                           className="absolute inset-0"
                           title="Scrapie's Twitch Stream"
+                          loading="lazy"
                         ></iframe>
                       </div>
-                      <div 
-                        className="bg-purple-600 hover:bg-purple-500 rounded-md p-2 sm:p-3 transition-colors duration-300 cursor-pointer animate-shimmer"
+                      <button 
+                        className="bg-purple-600 hover:bg-purple-500 rounded-md p-2 sm:p-3 transition-colors duration-300 cursor-pointer w-full animate-shimmer"
                         onClick={() => window.open('https://twitch.tv/Scrapie', '_blank')}
+                        aria-label="Watch live on Twitch"
                       >
                         <div className="flex items-center justify-center gap-2 sm:gap-3">
                           <div className="flex items-center gap-2">
@@ -173,7 +194,7 @@ export default function SubathonPage() {
                             className="h-6 w-6 sm:h-8 sm:w-8"
                           />
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </CardContent>
                 </Card>
@@ -193,18 +214,15 @@ export default function SubathonPage() {
                           width={44}
                           height={44}
                           className="h-8 w-8 sm:h-11 sm:w-11 hover:scale-110 transition-transform duration-200"
+                          loading="lazy"
                         />
                       </div>
                     </div>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       {events.map((e, idx) => {
-                        const getEventUrl = (date: string) => {
-                          if (date.includes('27.09')) return 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-eu-qualifier-on-twitch-rivals-lk2EK';
-                          if (date.includes('03.10')) return 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP';
-                          return null;
-                        };
-                        
-                        const eventUrl = getEventUrl(e.date);
+                        // Get event URL from the map by extracting the date
+                        const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : '';
+                        const eventUrl = EVENT_URL_MAP[dateKey];
                         
                         return (
                           <li
@@ -269,8 +287,6 @@ export default function SubathonPage() {
                     </ul>
                   </CardContent>
                 </Card>
-
-                {/* Removing the image card as it's been replaced with the Twitch embed at the top */}
               </div>
             </div>
           </div>
