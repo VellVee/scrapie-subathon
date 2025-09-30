@@ -27,7 +27,7 @@ export default function SubathonPage() {
     { goal: 5500, text: "SONG REQUESTS", met: true },
     { goal: 6000, text: "PLAYING RANDOM ALT CAMPAIGN", met: true },
     { goal: 6500, text: "WIN CHALLENGE IN VARIOUS GAMES", met: true },
-    { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE", met: false },
+    { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE", met: true },
     { goal: 7500, text: "PLAYING SOULSLIKE GAME", met: false },
     { goal: 8000, text: "VIEWER CHALLENGES", met: false },
     { goal: 8500, text: "BUYING A GREENSCREEN", met: false },
