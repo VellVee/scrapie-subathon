@@ -61,7 +61,7 @@ export default function SubathonPage() {
     { goal: 7500, text: "PLAYING A SOULSLIKE GAME", met: true },
     { goal: 8000, text: "VIEWER CHALLENGES", met: true },
     { goal: 8500, text: "BUYING A GREENSCREEN", met: true },
-    { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN", met: false },
+    { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN", met: true },
     { goal: 9500, text: "PLAYING A HORROR GAME", met: false },
     { goal: 10000, text: "MAX TIMER FOR 7 DAYS", met: false },
     { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
