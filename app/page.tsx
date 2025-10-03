@@ -38,10 +38,9 @@ export default function SubathonPage() {
     { goal: 8500, text: "📹 BUYING A GREENSCREEN", met: true },
     { goal: 9000, text: "🗺️ SPEEDMAPPING A MINICAMPAIGN", met: true },
     { goal: 9500, text: "💀 PLAYING A HORROR GAME", met: true },
-    { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: false },
+    { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: true },
     { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: false },
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: false },
-    //{ goal: 13000, text: "STELLAR BLADE, THANKS ULTIMATE_LIFE", met: false },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: false },
   ], []);
 
