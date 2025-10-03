@@ -70,6 +70,7 @@ export default function SubathonPage() {
     { goal: 10420, text: "UNCAPPED SUBATHON", met: false },
     { goal: 11111, text: "50% MORE TIME FOR AN HOUR", met: false },
     { goal: 12000, text: "REINSTALL ELDEN RING", met: false },
+    { goal: 13000, text: "STELLAR BLADE, THANKS ULTIMATE_LIFE", met: false },
     { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
   ], []);
 
