@@ -9,35 +9,6 @@ const EVENT_URL_MAP: Record<string, string | undefined> = {
   '03.10': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP'
 };
 
-const EMOJI_MAP = {
-  RMT: '🎲',
-  RMC: '🎲',
-  'SPEEDMAPPING EVENT': '🔧',
-  'SPEEDMAPPING A MINICAMPAIGN': '🗺️',
-  AMQ: '🎵',
-  'CHAT PICKS': '🎮',
-  GEOGUESSR: '🌍',
-  TOURNAMENT: '🏆',
-  YLYL: '😂',
-  '50 WRs': '🥇',
-  'SONG REQUESTS': '🎶',
-  'PLAYING RANDOM ALT CAMPAIGN': '🎮',
-  COSPLAY: '👗',
-  SOULSLIKE: '💀',
-  HORROR: '💀',
-  'VIEWER CHALLENGES': '⚔️',
-  GREENSCREEN: '📹',
-  VTUBER: '😈',
-  INFINITE: '♾️',
-  'UNCAPPED SUBATHON': '♾️',
-  'ACTIVATE 35% SUB DISCOUNT': '💰',
-  '50% MORE TIME FOR AN HOUR': '⏰',
-  'REINSTALL ELDEN RING': '🎮',
-  'MAX TIMER FOR 7 DAYS': '🕐',
-  'WIN CHALLENGE IN VARIOUS GAMES': '🎮',
-  'RATING VIEWER SETUPS': '🖥️'
-};
-
 export default function SubathonPage() {
   const [isSpinning, setIsSpinning] = useState(false)
   
@@ -48,44 +19,44 @@ export default function SubathonPage() {
   }
 
   const subgoals = useMemo(() => [
-    { goal: 500, text: "RMT W/ GIFTSUBS", met: true },
-    { goal: 1000, text: "RMC W/ GIFTSUBS", met: true },
-    { goal: 1500, text: "RATING VIEWER SETUPS", met: true },
-    { goal: 2000, text: "SPEEDMAPPING EVENT", met: true },
-    { goal: 2500, text: "AMQ W/ GIFTSUBS", met: true },
-    { goal: 3000, text: "CHAT PICKS A RANDOM STEAM GAME", met: true },
-    { goal: 3500, text: "GEOGUESSR VS CHAT", met: true },
-    { goal: 4000, text: "KO TOURNAMENT", met: true },
-    { goal: 4500, text: "YLYL CHALLENGE", met: true },
-    { goal: 5000, text: "50 WRs CHALLENGE", met: true },
-    { goal: 5500, text: "SONG REQUESTS", met: true },
-    { goal: 6000, text: "PLAYING RANDOM ALT CAMPAIGN", met: true },
-    { goal: 6500, text: "WIN CHALLENGE IN VARIOUS GAMES", met: true },
-    { goal: 6969, text: "COSPLAY OF CHAT'S CHOICE", met: true },
-    { goal: 7500, text: "PLAYING A SOULSLIKE GAME", met: true },
-    { goal: 8000, text: "VIEWER CHALLENGES", met: true },
-    { goal: 8500, text: "BUYING A GREENSCREEN", met: true },
-    { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN", met: true },
-    { goal: 9500, text: "PLAYING A HORROR GAME", met: true },
-    { goal: 10420, text: "UNCAPPED SUBATHON", met: false },
-    { goal: 11111, text: "50% MORE TIME FOR AN HOUR", met: false },
-    { goal: 12000, text: "REINSTALL ELDEN RING", met: false },
+    { goal: 500, text: "🎲 RMT W/ GIFTSUBS", met: true },
+    { goal: 1000, text: "🎲 RMC W/ GIFTSUBS", met: true },
+    { goal: 1500, text: "🖥️ RATING VIEWER SETUPS", met: true },
+    { goal: 2000, text: "🔧 SPEEDMAPPING EVENT", met: true },
+    { goal: 2500, text: "🎵 AMQ W/ GIFTSUBS", met: true },
+    { goal: 3000, text: "🎮 CHAT PICKS A RANDOM STEAM GAME", met: true },
+    { goal: 3500, text: "🌍 GEOGUESSR VS CHAT", met: true },
+    { goal: 4000, text: "🏆 KO TOURNAMENT", met: true },
+    { goal: 4500, text: "😂 YLYL CHALLENGE", met: true },
+    { goal: 5000, text: "🥇 50 WRs CHALLENGE", met: true },
+    { goal: 5500, text: "🎶 SONG REQUESTS", met: true },
+    { goal: 6000, text: "🎮 PLAYING RANDOM ALT CAMPAIGN", met: true },
+    { goal: 6500, text: "🎮 WIN CHALLENGE IN VARIOUS GAMES", met: true },
+    { goal: 6969, text: "👗 COSPLAY OF CHAT'S CHOICE", met: true },
+    { goal: 7500, text: "💀 PLAYING A SOULSLIKE GAME", met: true },
+    { goal: 8000, text: "⚔️ VIEWER CHALLENGES", met: true },
+    { goal: 8500, text: "📹 BUYING A GREENSCREEN", met: true },
+    { goal: 9000, text: "🗺️ SPEEDMAPPING A MINICAMPAIGN", met: true },
+    { goal: 9500, text: "💀 PLAYING A HORROR GAME", met: true },
+    { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: false },
+    { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: false },
+    { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: false },
     //{ goal: 13000, text: "STELLAR BLADE, THANKS ULTIMATE_LIFE", met: false },
-    { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
+    { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: false },
   ], []);
 
   const events = useMemo(() => [
-    { date: "Saturday, 27.09", text: "Twitch Rivals", completed: true },
-    { date: "Friday, 03.10", text: "Twitch Rivals Finals", completed: false },
+    { date: "📆 Saturday, 27.09", text: "🏆 Twitch Rivals", completed: true },
+    { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: false },
   ], []);
 
   const timerRules = useMemo(() => [
-    { label: "Tier 1/Prime", value: "1 min" },
-    { label: "Tier 2", value: "2 min" },
-    { label: "Tier 3", value: "5 min" },
-    { label: "$5 dono", value: "1 min" },
-    { label: "500 Bits", value: "1 min" },
-    { label: "Follow (look below)", value: "1 sec" },
+    { label: "💎 Tier 1/Prime", value: "⚡ 1 min" },
+    { label: "💎 Tier 2", value: "⚡ 2 min" },
+    { label: "💎 Tier 3", value: "⚡ 5 min" },
+    { label: "💎 $5 dono", value: "⚡ 1 min" },
+    { label: "💎 500 Bits", value: "⚡ 1 min" },
+    { label: "💎 Follow (look below)", value: "⚡ 1 sec" },
   ], []);
 
   return (
@@ -126,36 +97,27 @@ export default function SubathonPage() {
                     <span className="text-xl sm:text-2xl lg:text-3xl">🎯</span>
                   </h2>
                   <ul className="space-y-1 flex-1 flex flex-col justify-between">
-                    {subgoals.map((s, idx) => {
-                      const getEmoji = (text: string) => {
-                        for (const [key, emoji] of Object.entries(EMOJI_MAP)) {
-                          if (text.includes(key)) return emoji;
-                        }
-                        return '�';
-                      };
-                      
-                      return (
-                        <li
-                          key={idx}
-                          className={`grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr] items-center gap-2 sm:gap-3 p-2 rounded-lg transition-all duration-200 group ${
-                            s.met 
-                              ? 'bg-gradient-to-r from-green-800 to-green-700 hover:from-green-700 hover:to-green-600' 
-                              : 'bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600'
-                          }`}
-                        >
-                          <span className={`font-black text-right animate-number-glow group-hover:scale-110 transition-transform duration-200 text-sm sm:text-base ${
-                            s.met ? 'text-green-400' : 'text-blue-400'
-                          }`}>
-                            {s.goal}
-                          </span>
-                          <span className={`font-trueno text-left group-hover:translate-x-1 transition-transform duration-200 text-xs sm:text-sm lg:text-base ${
-                            s.met ? 'text-green-100 line-through' : 'text-white'
-                          }`}>
-                            {getEmoji(s.text)} {s.text} {s.met ? '✅' : ''}
-                          </span>
-                        </li>
-                      );
-                    })}
+                    {subgoals.map((s, idx) => (
+                      <li
+                        key={idx}
+                        className={`grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr] items-center gap-2 sm:gap-3 p-2 rounded-lg transition-all duration-200 group ${
+                          s.met 
+                            ? 'bg-gradient-to-r from-green-800 to-green-700 hover:from-green-700 hover:to-green-600' 
+                            : 'bg-gradient-to-r from-gray-800 to-gray-700 hover:from-gray-700 hover:to-gray-600'
+                        }`}
+                      >
+                        <span className={`font-black text-right animate-number-glow group-hover:scale-110 transition-transform duration-200 text-sm sm:text-base ${
+                          s.met ? 'text-green-400' : 'text-blue-400'
+                        }`}>
+                          {s.goal}
+                        </span>
+                        <span className={`font-trueno text-left group-hover:translate-x-1 transition-transform duration-200 text-xs sm:text-sm lg:text-base ${
+                          s.met ? 'text-green-100 line-through' : 'text-white'
+                        }`}>
+                          {s.text} {s.met ? '✅' : ''}
+                        </span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -232,9 +194,9 @@ export default function SubathonPage() {
                               p-2 sm:p-3 rounded-lg transition-all duration-200 ${eventUrl ? 'cursor-pointer' : ''}`}
                             onClick={() => eventUrl && window.open(eventUrl, '_blank')}
                           >
-                            <span className={`font-semibold whitespace-nowrap ${e.completed ? 'text-green-300' : ''}`}>📆 {e.date}</span>
+                            <span className={`font-semibold whitespace-nowrap ${e.completed ? 'text-green-300' : ''}`}>{e.date}</span>
                             <span className={`font-trueno text-right ${e.completed ? 'text-green-100 line-through' : ''}`}>
-                              🏆 {e.text} {e.completed ? '✅' : ''}
+                              {e.text} {e.completed ? '✅' : ''}
                             </span>
                           </li>
                         );
@@ -258,8 +220,8 @@ export default function SubathonPage() {
                           key={idx}
                           className="grid grid-cols-[1fr_auto] items-center gap-3 sm:gap-4 bg-gradient-to-r from-gray-800 to-gray-700 p-2 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200"
                         >
-                          <span className="text-xs sm:text-sm lg:text-base">💎 {t.label}</span>
-                          <span className="font-trueno text-right font-black text-xs sm:text-sm lg:text-base">⚡ {t.value}</span>
+                          <span className="text-xs sm:text-sm lg:text-base">{t.label}</span>
+                          <span className="font-trueno text-right font-black text-xs sm:text-sm lg:text-base">{t.value}</span>
                         </li>
                       ))}
                     </ul>
