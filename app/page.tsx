@@ -29,6 +29,10 @@ const EMOJI_MAP = {
   GREENSCREEN: '📹',
   VTUBER: '😈',
   INFINITE: '♾️',
+  'UNCAPPED SUBATHON': '♾️',
+  'ACTIVATE 35% SUB DISCOUNT': '💰',
+  '50% MORE TIME FOR AN HOUR': '⏰',
+  'REINSTALL ELDEN RING': '🎮',
   'MAX TIMER FOR 7 DAYS': '🕐',
   'WIN CHALLENGE IN VARIOUS GAMES': '🎮',
   'RATING VIEWER SETUPS': '🖥️'
@@ -63,9 +67,10 @@ export default function SubathonPage() {
     { goal: 8500, text: "BUYING A GREENSCREEN", met: true },
     { goal: 9000, text: "SPEEDMAPPING A MINICAMPAIGN", met: true },
     { goal: 9500, text: "PLAYING A HORROR GAME", met: true },
-    { goal: 10000, text: "MAX TIMER FOR 7 DAYS", met: false },
+    { goal: 10420, text: "UNCAPPED SUBATHON", met: false },
+    { goal: 11111, text: "50% MORE TIME FOR AN HOUR", met: false },
+    { goal: 12000, text: "REINSTALL ELDEN RING", met: false },
     { goal: 15000, text: "COMMISSIONING A VTUBER MODEL", met: false },
-    { goal: 20000, text: "INFINITE SUBATHON", met: false },
   ], []);
 
   const events = useMemo(() => [
