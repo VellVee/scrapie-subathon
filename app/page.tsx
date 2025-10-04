@@ -39,7 +39,7 @@ export default function SubathonPage() {
     { goal: 9000, text: "🗺️ SPEEDMAPPING A MINICAMPAIGN", met: true },
     { goal: 9500, text: "💀 PLAYING A HORROR GAME", met: true },
     { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: true },
-    { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: false },
+    { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: false },
     { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM 'NEW RELEASES' TAB", met: false },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: false },
