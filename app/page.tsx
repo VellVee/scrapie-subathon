@@ -47,7 +47,7 @@ export default function SubathonPage() {
 
   const events = useMemo(() => [
     { date: "📆 Saturday, 27.09", text: "🏆 Twitch Rivals", completed: true },
-    { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: false },
+    { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: true },
   ], []);
 
   const timerRules = useMemo(() => [
