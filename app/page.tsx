@@ -42,7 +42,7 @@ export default function SubathonPage() {
     { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: true },
     { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM 'NEW RELEASES' TAB", met: true },
-    { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: false },
+    { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: true },
     { goal: 16000, text: "👠 PLAYING STELLAR BLADE", met: false },
   ], []);
 
