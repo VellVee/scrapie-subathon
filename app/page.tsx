@@ -43,6 +43,7 @@ export default function SubathonPage() {
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: true },
     { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM 'NEW RELEASES' TAB", met: true },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: false },
+    { goal: 16000, text: "👠 PLAYING STELLAR BLADE", met: false },
   ], []);
 
   const events = useMemo(() => [
