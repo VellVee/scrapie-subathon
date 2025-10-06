@@ -243,7 +243,7 @@ export default function SubathonPage() {
                         🔄 Every 1000 Subs repeats the 1000 Subs goal.
                       </li>
                       <li className="font-trueno bg-gradient-to-r from-gray-800 to-gray-700 p-2 sm:p-3 rounded-lg hover:from-gray-700 hover:to-gray-600 transition-all duration-200 text-xs sm:text-sm lg:text-base">
-                        🗺️ Gifting 20 Subs means you can request a map to play during daily session.
+                        🗺️ Gifting 20 Subs means you can request a map to play (when we figure out how to check that stuff).
                       </li>
                     </ul>
                   </CardContent>
