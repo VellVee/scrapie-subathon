@@ -45,6 +45,7 @@ export default function SubathonPage() {
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: true },
     { goal: 16000, text: "👠 PLAYING STELLAR BLADE", met: true },
     { goal: 17000, text: "🏎 PLAYING A RANDOM RACING GAME ON STEAM", met: false },
+    { goal: 20000, text: "🎤 KARAOKE", met: false },
   ], []);
 
   const events = useMemo(() => [
