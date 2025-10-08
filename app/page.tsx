@@ -44,7 +44,7 @@ export default function SubathonPage() {
     { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM 'NEW RELEASES' TAB", met: true },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: true },
     { goal: 16000, text: "👠 PLAYING STELLAR BLADE", met: true },
-    { goal: 17000, text: "🏎 PLAYING A RANDOM RACING GAME ON STEAM", met: false }, 
+    { goal: 17000, text: "🏎 PLAYING A RANDOM RACING GAME ON STEAM", met: true }, 
     { goal: 17500, text: "🎯 BIG BINGO BANGO", met: false },
     { goal: 18000, text: "🔫 BF6 COLLAB", met: false },
     { goal: 20000, text: "🎤 KARAOKE", met: false },
