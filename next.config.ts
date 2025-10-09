@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true, // Disable Image Optimization to avoid Vercel Image Transformations
     remotePatterns: [
       {
         protocol: "https",
@@ -24,9 +25,6 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 86400, // 24 hours
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   // Compress HTML and CSS output
   compress: true,
