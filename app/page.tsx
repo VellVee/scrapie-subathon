@@ -41,7 +41,7 @@ export default function SubathonPage() {
     { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: true },
     { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: true },
-    { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM 'NEW RELEASES' TAB", met: true },
+    { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM NEW RELEASES TAB", met: true },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: true },
     { goal: 16000, text: "👠 PLAYING STELLAR BLADE", met: true },
     { goal: 17000, text: "🏎 PLAYING A RANDOM RACING GAME ON STEAM", met: true }, 
@@ -56,6 +56,7 @@ export default function SubathonPage() {
   const events = useMemo(() => [
     { date: "📆 Saturday, 27.09", text: "🏆 Twitch Rivals", completed: true },
     { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: true },
+    { date: "📆 Saturday, 11.10", text: "🏆 TM EVENT w/ Lars", completed: false },
   ], []);
 
   const timerRules = useMemo(() => [
