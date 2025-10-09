@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,12 +15,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Scrapie's Subtember Subathon",
   description: "Join Scrapie's epic Subtember Subathon with goals, events, and more!",
-  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: "https://static-cdn.jtvnw.net/jtv_user_pictures/a3960d56-8d00-4d88-85a6-f2fea4115ea6-profile_image-70x70.png",
     shortcut: "https://static-cdn.jtvnw.net/jtv_user_pictures/a3960d56-8d00-4d88-85a6-f2fea4115ea6-profile_image-70x70.png",
     apple: "https://static-cdn.jtvnw.net/jtv_user_pictures/a3960d56-8d00-4d88-85a6-f2fea4115ea6-profile_image-70x70.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
