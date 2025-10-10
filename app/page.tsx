@@ -49,7 +49,7 @@ export default function SubathonPage() {
     { goal: 18000, text: "🔫 BF6 COLLAB", met: true },
     { goal: 20000, text: "🎤 KARAOKE", met: false },
     { goal: 22222, text: "⏰ 50% MORE TIME FOR AN HOUR", met: false },
-    { goal: 42690, text: "🌍 IRL STREAM FROM BRAZIL", met: false },
+    { goal: 42069, text: "🌍 IRL STREAM FROM BRAZIL", met: false },
 
   ], []);
 
