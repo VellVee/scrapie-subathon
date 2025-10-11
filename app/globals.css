@@ -171,3 +171,52 @@ body {
 .animate-spin-once {
   animation: spin-once 0.8s ease-in-out;
 }
+
+/* ENDED Stamp Effect */
+.ended-stamp {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: clamp(6rem, 20vw, 16rem);
+  font-weight: 900;
+  color: rgba(220, 38, 38, 0.55);
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  transform: rotate(-15deg);
+  border: 1rem solid rgba(220, 38, 38, 0.55);
+  border-radius: 1.5rem;
+  padding: 2rem 4rem;
+  box-shadow: 
+    0 0 0 0.5rem rgba(220, 38, 38, 0.35),
+    inset 0 0 2rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  user-select: none;
+}
+
+.ended-stamp::before {
+  content: '';
+  position: absolute;
+  inset: -1rem;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(220, 38, 38, 0.05) 10px,
+      rgba(220, 38, 38, 0.05) 20px
+    );
+  border-radius: 1.5rem;
+  pointer-events: none;
+}
+
+/* Add grunge texture effect */
+.ended-stamp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, transparent 0%, rgba(0,0,0,0.1) 100%),
+    radial-gradient(circle at 80% 50%, transparent 0%, rgba(0,0,0,0.1) 100%);
+  mix-blend-mode: multiply;
+  border-radius: 1rem;
+  pointer-events: none;
+}
