@@ -6,7 +6,8 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const EVENT_URL_MAP: Record<string, string | undefined> = {
   '27.09': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-eu-qualifier-on-twitch-rivals-lk2EK',
-  '03.10': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP'
+  '03.10': 'https://schedule.twitchrivals.com/events/sonic-racing-crossworlds-grand-finals-on-twitch-rivals-Z0pYP',
+  '11.10': 'https://www.reddit.com/r/TrackMania/comments/1o0nhdh/5000_2v2_fastlearn_tournament_this_saturday/'
 };
 
 export default function SubathonPage() {
@@ -56,7 +57,7 @@ export default function SubathonPage() {
   const events = useMemo(() => [
     { date: "📆 Saturday, 27.09", text: "🏆 Twitch Rivals", completed: true },
     { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: true },
-    { date: "📆 Saturday, 11.10", text: "🏆 TM EVENT w/ Lars", completed: false },
+    { date: "📆 Saturday, 11.10", text: "🏆 2v2 EVENT w/ Lars", completed: false },
   ], []);
 
   const timerRules = useMemo(() => [
