@@ -12,6 +12,7 @@ const EVENT_URL_MAP: Record<string, string | undefined> = {
 
 export default function SubathonPage() {
   const [isSpinning, setIsSpinning] = useState(false)
+  const [showEndedStamp, setShowEndedStamp] = useState(false) // Toggle to show/hide ENDED stamp
   
   const handleLogoClick = () => {
     if (isSpinning) return // Ignore clicks while already spinning
@@ -77,11 +78,13 @@ export default function SubathonPage() {
 
       <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
         {/* ENDED Stamp Overlay */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
-          <div className="ended-stamp">
-            ENDED
+        {showEndedStamp && (
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
+            <div className="ended-stamp">
+              ENDED
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 shadow-2xl backdrop-blur-lg border-2 sm:border-4 border-black">
           <div className="relative p-4 sm:p-6">
