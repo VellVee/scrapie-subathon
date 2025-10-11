@@ -201,7 +201,7 @@ export default function SubathonPage() {
                     </div>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       {events.map((e, idx) => {
-                        const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : '';
+                        const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : e.date.includes('11.10') ? '11.10' : '';
                         const eventUrl = EVENT_URL_MAP[dateKey];
                         
                         return (
