@@ -74,14 +74,14 @@ export default function SubathonPage() {
         <div className="absolute inset-0 bg-gray-900" />
       </div>
 
-      {/* ENDED Stamp Overlay */}
-      <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center">
-        <div className="ended-stamp">
-          ENDED
-        </div>
-      </div>
-
       <section className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
+        {/* ENDED Stamp Overlay */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
+          <div className="ended-stamp">
+            ENDED
+          </div>
+        </div>
+
         <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 shadow-2xl backdrop-blur-lg border-2 sm:border-4 border-black">
           <div className="relative p-4 sm:p-6">
             <div className="absolute -inset-6 bg-gradient-to-br from-blue-400 via-cyan-400 to-emerald-400 rounded-3xl animate-gradient opacity-90" />
