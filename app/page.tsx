@@ -49,7 +49,7 @@ export default function SubathonPage() {
     { goal: 17000, text: "🏎 PLAYING A RANDOM RACING GAME ON STEAM", met: true }, 
     { goal: 17500, text: "🎯 BIG BINGO BANGO", met: true },
     { goal: 18000, text: "🔫 BF6 COLLAB", met: true },
-    { goal: 20000, text: "🎤 KARAOKE", met: false },
+    { goal: 20000, text: "🎤 KARAOKE", met: true },
     { goal: 20800, text: "🎮 SPECIAL TRACKMANIA EVENT BATCHEST", met: false },
     { goal: 22222, text: "⏰ 50% MORE TIME FOR AN HOUR", met: false },
     { goal: 42069, text: "🌍 IRL STREAM FROM BRAZIL", met: false },
