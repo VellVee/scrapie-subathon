@@ -41,7 +41,7 @@ export default function SubathonPage() {
     { goal: 9000, text: "🗺️ SPEEDMAPPING A MINICAMPAIGN", met: true },
     { goal: 9500, text: "💀 PLAYING A HORROR GAME", met: true },
     { goal: 10420, text: "♾️ UNCAPPED SUBATHON", met: true },
-    { goal: 11111, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
+    { goal: 11111, text: "⏰ 2x MORE TIME FOR AN HOUR", met: true },
     { goal: 12000, text: "🎮 REINSTALL ELDEN RING", met: true },
     { goal: 13000, text: "🎲 PLAYING 2 RANDOM GAMES FROM STEAM NEW RELEASES TAB", met: true },
     { goal: 15000, text: "😈 COMMISSIONING A VTUBER MODEL", met: true },
@@ -51,7 +51,7 @@ export default function SubathonPage() {
     { goal: 18000, text: "🔫 BF6 COLLAB", met: true },
     { goal: 20000, text: "🎤 KARAOKE", met: true },
     { goal: 20800, text: "🎮 SPECIAL TRACKMANIA EVENT BATCHEST", met: true },
-    { goal: 22222, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
+    { goal: 22222, text: "⏰ 2x MORE TIME FOR AN HOUR", met: true },
     { goal: 23000, text: "🧠 ARE YOU SMARTER THAN A 5TH GRADER", met: false },
     { goal: 24000, text: "🐑 PLAYING CULT OF THE LAMB", met: false },
     { goal: 42069, text: "🌍 IRL STREAM FROM BRAZIL", met: false }
