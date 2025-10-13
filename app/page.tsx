@@ -61,6 +61,7 @@ export default function SubathonPage() {
     { date: "📆 Saturday, 27.09", text: "🏆 Twitch Rivals", completed: true },
     { date: "📆 Friday, 03.10", text: "🏆 Twitch Rivals Finals", completed: true },
     { date: "📆 Saturday, 11.10", text: "🏆 2v2 EVENT w/ Lars", completed: true },
+    { date: "📆 Sunday, 12.10", text: "🗺️ RPG DISCOVERY", completed: true },
   ], []);
 
   const timerRules = useMemo(() => [
@@ -203,7 +204,7 @@ export default function SubathonPage() {
                     </div>
                     <ul className="space-y-2 sm:space-y-3 text-white">
                       {events.map((e, idx) => {
-                        const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : e.date.includes('11.10') ? '11.10' : '';
+                        const dateKey = e.date.includes('27.09') ? '27.09' : e.date.includes('03.10') ? '03.10' : e.date.includes('11.10') ? '11.10' : e.date.includes('12.10') ? '12.10' : '';
                         const eventUrl = EVENT_URL_MAP[dateKey];
                         
                         return (
