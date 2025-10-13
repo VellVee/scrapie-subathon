@@ -52,8 +52,8 @@ export default function SubathonPage() {
     { goal: 20000, text: "🎤 KARAOKE", met: true },
     { goal: 20800, text: "🎮 SPECIAL TRACKMANIA EVENT BATCHEST", met: true },
     { goal: 22222, text: "⏰ 50% MORE TIME FOR AN HOUR", met: true },
-    { goal: 25000, text: "🧠 ARE YOU SMARTER THAN A 5TH GRADER", met: false },
-    { goal: 30000, text: "🐑 PLAYING CULT OF THE LAMB", met: false },
+    { goal: 23000, text: "🧠 ARE YOU SMARTER THAN A 5TH GRADER", met: false },
+    { goal: 24000, text: "🐑 PLAYING CULT OF THE LAMB", met: false },
     { goal: 42069, text: "🌍 IRL STREAM FROM BRAZIL", met: false }
   ], []);
 
