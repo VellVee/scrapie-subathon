@@ -55,6 +55,7 @@ export default function SubathonPage() {
     { goal: 23000, text: "🧠 ARE YOU SMARTER THAN A 5TH GRADER", met: true },
     { goal: 24000, text: "🐑 PLAYING CULT OF THE LAMB", met: true },
     { goal: 25000, text: "🃏 BUYING POKEMON CARDS FOR OPENING LATER", met: true },
+    { goal: 26500, text: "🎨 DRAWING NEW SUBBADGES", met: false },
     { goal: 31134, text: "🏆 BEATING THE TOTAL SUB NUMBER FROM LAST YEAR", met: false },
     { goal: 33333, text: "⏰ 2x MORE TIME FOR AN HOUR", met: false },
     { goal: 42069, text: "🌍 IRL STREAM FROM BRAZIL", met: false }
