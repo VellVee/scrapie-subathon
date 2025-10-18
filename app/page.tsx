@@ -12,7 +12,7 @@ const EVENT_URL_MAP: Record<string, string | undefined> = {
 
 export default function SubathonPage() {
   const [isSpinning, setIsSpinning] = useState(false)
-  const [showEndedStamp, setShowEndedStamp] = useState(false) // Toggle to show/hide ENDED stamp
+  const [showEndedStamp, setShowEndedStamp] = useState(true) // Toggle to show/hide ENDED stamp
   
   const handleLogoClick = () => {
     if (isSpinning) return // Ignore clicks while already spinning
