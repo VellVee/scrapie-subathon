@@ -1,3 +1,11 @@
+> [!NOTE]
+> **This repository and website are archived.**
+>
+> This website project is no longer maintained. The content was moved to a new page on Scrapie's website.
+>
+> You can now access the archived page at:
+> [https://scrapie.tv/archive/subathon-2025](https://scrapie.tv/archive/subathon-2025)
+
 # Scrapie's Subtember Subathon Website
 
 A responsive Next.js website for displaying subathon goals, events, and stream information for Scrapie's Twitch channel.
